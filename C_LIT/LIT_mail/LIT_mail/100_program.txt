@@ -1,0 +1,1540 @@
+1. Program to calculate the factorial of a number
+2. Program to calculate the sum digits of a number
+3. Program to reverse a number
+4. Program to check the number is strong number or not.
+5. Program to calculate the prime factors of a numbers
+6. Program to check given number is armstrong or not
+7. Program to check given number is palendrome or not
+8. Program to add between any two numbers using loop
+9. Program to calculate daily expenditure if monthely expenditure is given using loop.
+10. Program to count number of bits are set to 1 in an integer.
+11. Program to calculate G.C.D of any two numbers
+12. Program to calculate L.C.M of two numbers. 
+13. Program to calculate fibonacci series 
+14. Program to calculate string palindrome
+15. Program to check the number is Prime number or not 
+16. Program to find largest number in an array
+17. Program to find Second largest number in an array
+18. Program to  remove duplicate elements in an array
+19. Program to convert decimal to binary
+20. Program to convert binary to decimal
+21. Program to check the number is perfect number or not.
+22. Program to find generic root of a number. 
+23. Program to check a year is leap year or not.
+
+24. Program to revese a string
+25. Program to add a sub-string in a string
+26. Program to traverse a string in reverse order
+27. Program to count number of vowels , digits,characters and word present in string.
+
+28. Program to add between two matrix
+29. Program to multiplication between two matrix
+30. Program to transpose a matrix
+31. Program for a sparse matrix
+
+32. Program to calculate Amicable pairs from 1 to 1000
+33. Program to calculate Sum of the series 1+2+3+---------+n 
+34. Program to find area triangle
+
+35. Program  for Bubble sort 
+36. Program  for Selection sort 
+37. Program  for insertion sort
+38. Program  for Quick Sort
+39. Program  for Merge Sort
+
+40. Program for Sequential search using array
+41. Program for Sequential search  using linked list
+42. Program for Binary search using array
+43. Program for Binary search using linked list
+
+44. Program to implement stack using linked list
+45. Program to convert infix to postfix notation
+46. Program to  Evaluate postfix notation
+
+47. Program to implement Queue using linked list
+48. Program for Dqueue
+49. Program for Priority Queue
+
+50. Program to traverse linked list in reverse order.
+51. Program to display the contents of a file using command line argument
+
+52. Caclulate the age of a person after giving the date of birth
+53. Cacluate the average marks of student looking at the following table
+54. Cacluate the amount to be paid after giving the total time.
+55. Program to convert upper case to lower case
+56. Program to calculate the power of a number
+57. INSERT AN ELMENT IN AN ARRAY AT DESIRED POSITION
+58. program to calculate the sum of the following series
+	1 - x + x2/2! + x3/3! --------to nth term
+59. find the weekday of a particular date(ex-6 sep 2010 (monday)
+60.Write a program to convert given ip address 192.168.3.35 into 192.168.003.035
+61.Caclulate the net salary looking at the following table
+62.    Write a  program to display :
+ 	         * 
+                *** 
+               ***** 
+              ******* 
+             ********* 
+	      ******
+	       ***
+	        *
+63. Write a program which will store roll name and age in student structure and address telephone no. In address structure. Implement the nested structure which will store information of ten students and their address and organize data in descending order by their roll no.
+
+64. Write a program to store the information of student such as roll, name and course to a file using read & write system call.
+65. Write a program to count no. of paragraphs, lines, words and characters present in a file.
+------------------------------------------------------
+1. Program to calculate the factorial of a number
+main()
+{
+        int x,n;
+        printf("Enter a number :");
+        scanf("%d",&n);
+        x=fact(n);
+        printf("%d",x);
+}
+int fact(int n)
+{
+        int f=1;
+        while(n>0)
+        {
+                f=f*n;
+                n--;
+        }
+        return f;
+}
+
+2. Program to calculate the sum digits of a number
+
+main()
+{
+        int x,n;
+        printf("Enter a number :");
+        scanf("%d",&n);
+        x=sum_digit(n);
+        printf("%d",x);
+}
+int sum_digit(int n)
+{
+        int s=0;
+        while(n>0)
+        {
+                s=s + n%10;
+                n=n/10;
+        }
+        return s;
+}
+3. Program to reverse a number
+
+main()
+{
+        int x,n;
+        printf("Enter a number :");
+        scanf("%d",&n);
+        x=reverse(n);
+        printf("%d",x);
+}
+int reverse(int n)
+{
+        int s=0;
+        while(n>0)
+        {
+                s=s *10 + n%10;
+                n=n/10;
+        }
+        return s;
+}
+
+4. Program to check the number is strong number or not.
+main()
+{
+        int x,n;
+        printf("Enter a number :");
+        scanf("%d",&n);
+        x=strong(n);
+        if(x==n)
+                printf("Strong");
+        else
+                printf("Not strong");
+}
+int strong(int n)
+{
+        int s=0,r,f;
+        while(n>0)
+        {
+                r=n%10;
+                f=fact(r);
+                s=s+f;
+                n=n/10;
+        }
+        return s;
+}
+int fact(int n)
+{
+        int f=1;
+        while(n>0)
+        {
+                f=f*n;
+                n--;
+        }
+        return f;
+}
+5. Program to calculate the prime factors of a numbers
+main()
+{
+        int x,n;
+        printf("Enter a number :");
+        scanf("%d",&n);
+        prime_factors(n);
+}
+int prime_factors(int n)
+{
+        int i=1,k;
+        while(i<=n)
+        {
+                if(n%i==0)
+                {
+                        k=check_prime(i);
+                        if(k!=0)
+                                printf("%d ",k);
+                }
+                i++;
+        }
+}
+int check_prime(int n)
+{
+        int i=1;
+        int c=0;
+        while(i<=n)
+        {
+                if(n%i==0)
+                        c++;
+                i++;
+        }
+        if(c==2)
+                return n;
+        else
+                return 0;
+}mmmim
+6. Program to check given number is armstrong or not
+main()
+{
+        int n,x;
+        printf("Enter a number:");   
+        scanf("%d",&n);
+        x=armstrong(n);
+        if(x==n)
+                printf("Arm strong");
+        else
+                printf("Not arm strong");
+}
+
+int armstrong(int num)
+{
+        int sum=0,r;
+        while(num!=0)
+        {
+                r=num%10;
+                num=num/10;
+                sum=sum+(r*r*r);
+        }
+        return sum;
+}
+7. Program to check given number is palendrome or not
+main()
+{
+        int n,x;
+        printf("Enter a number:");
+        scanf("%d",&n);
+        x=palendrome(n);
+        if(x==n)
+                printf("Palendrome ");
+        else
+                printf("Not palendrome ");
+}
+
+int palendrome(int num)
+{
+        int r=0;
+        while(num>0)
+        {
+                r=r* 10 + num%10;
+                num=num/10;
+        }
+        return r;
+}
+8. Program to add between any two numbers using loop
+main()
+{
+	int x;
+	int a,b;
+	printf("Enter any two numbers :");
+	scanf("%d%d",&a,&b);
+	x=add(a,b);
+	printf("%d ",x);
+}
+int add(int a,int b)
+{
+	while(a>0)
+	{
+		b++;
+		a--;
+	}
+	return b;
+}
+9. Program to calculate daily expenditure if monthely expenditure is given using loop.
+main()
+{
+	int x,n;
+	printf("Enter monthely expenditure :");
+	scanf("%d",&n);
+	x=daily_exp(n);
+	printf("%d ",x);
+	
+}
+int daily_exp(int n)
+{
+	int c=0;
+	while(n>0)
+	{
+		c++;
+		n=n-30;
+	}
+	return c;
+}
+
+10. Program to count number of bits are set to 1 in an integer.
+
+main()
+{
+
+	int x,n;
+	printf("Enter a number :");
+	scanf("%d",&n);
+	x=bit_count(n);
+	printf("%d ",x);
+}
+int bit_count(int n)
+{
+	int c=0;
+	while(n>0)
+	{
+		c++;
+		n=n&n-1;
+	}
+	return c;
+}
+11. Program to calculate G.C.D of any two numbers
+main()
+{
+
+        int n1,n2,x;
+        printf("Enter two numbers:");
+        scanf("%d%d",&n1,&n2);
+        x=gcd(n1,n2);
+        printf("%d ",x);
+}
+int gcd(int n1,int n2)
+{
+
+        while(n1!=n2)
+        {
+                if(n1>n2)
+                        n1=n1-n2;
+                else
+                        n2=n2-n1;
+        }
+        return n1;
+}
+12. Program to calculate L.C.M of two numbers. 
+main()
+{
+
+        int n1,n2,x;
+        printf("Enter two numbers:");
+        scanf("%d%d",&n1,&n2);
+        x=lcm(n1,n2);
+        printf("%d ",x);
+}
+int lcm(int n1,int n2)
+{
+        int x,y;
+        x=n1,y=n2;
+        while(n1!=n2)
+        {
+                if(n1>n2)
+                        n1=n1-n2;
+                else
+                        n2=n2-n1;
+        }
+        return x*y/n1;
+}
+13. Program to calculate fibonacci series 
+main()
+{
+        int n;
+        printf("Enter the number range:");
+        scanf("%d",&n);
+        fibo(n);
+}
+int fibo(int n)
+{
+        int i=0,j=1,k=2,r,f;
+        printf("%d %d ", i,j);
+        while(k<n)
+        {
+                f=i+j;
+                i=j;
+                j=f;
+                printf(" %d",j);
+                k++;
+        }
+}
+14. Program to calculate string palindrome
+main()
+{
+        char x[100],y[100];
+        printf("Enter a string :");
+        scanf("%s",x);
+        strcpy(y,x);
+
+        check_palindrome(x);
+        if(strcmp(x,y)==0)
+                printf("Palindrome");
+        else
+                printf("Not Palindrome");
+}
+int check_palindrome(char *x)
+{
+        int len=strlen(x);
+        int i;
+        char temp;
+        for(i=0;i<len/2;i++)
+        {
+                temp=x[i];
+                x[i]=x[len-i-1];
+                x[len-i-1]=temp;
+        }
+}
+15. Program to check the number is Prime number or not 
+main()
+{
+        int n,k;
+        printf("Enter a number:"); 
+        scanf("%d",&n);
+        k=check_prime(n);
+        if(k==2)
+                printf("Prime");
+        else
+                printf("Not prime");
+}
+int check_prime(int n)
+{
+        int i=1,c=0;
+        while(i<=n)
+        {
+                if(n%i==0)
+                        c++;
+                i++;
+        }
+        return c;
+}
+16. Program to find largest number in an array
+main()
+{
+        int a[]={15,67,25,90,40};
+        int k;
+        k=large_number(a);
+        printf("%d ",k);
+}
+int large_number(int a[5])
+{
+        int i,big;
+        big=a[0];
+        for(i=1;i<5;i++)
+        {
+                if(big<a[i])
+                big=a[i];
+        }
+        return big;
+}
+17. Program to find Second largest number in an array
+main()
+{
+        int a[]={15,67,25,90,40};
+        int k;
+        k=large_number(a);
+        printf("%d ",k);
+}
+int large_number(int un[5])
+{
+        int big1,big2;
+        int i;
+        big1 = un[0];
+        for ( i=1;i<5;++i )
+        if ( big1 < un[i] )
+                big1 = un[i];
+        if ( big1!=un[0] )
+                big2=un[0];
+        else
+                big2=un[1];
+
+        for(i=1; i<5;++i )
+                if (big1!=un[i] && big2 < un[i] )
+                          big2=un[i];
+        return big2;
+}
+18. Program to  remove duplicate elements in an array
+main()
+{
+        int i,k;
+        int x[10]={5,7,2,8,9,3,3,6,7,20};
+        k=remove_duplicate(x);
+        for(i=0;i<k;i++)
+        {
+                printf(" %d",x[i]);
+        }
+
+}
+int remove_duplicate(int p[10])
+{
+        int size=10,i,j,k;
+        for(i=0;i<size;i++)
+        {
+                for(j=0;j<size;j++)
+                {
+                        if(i==j)
+                        {
+                                continue;
+                        }
+                        else
+                        if(*(p+i)==*(p+j))
+                        {
+                                k=j;
+                                size--;
+                                while(k < size)
+                                {
+                                        *(p+k)=*(p+k+1);
+                                        k++;
+                                }
+                                j=0;
+                        }
+              }
+        }
+        return size;
+}
+
+19. Program to convert from decimal to binary
+main()
+{
+        int n;
+        printf("Enter a number :");
+        scanf("%d",&n);
+        decimal_binary(n);
+
+}
+int decimal_binary(int n)
+{
+        int m,no=0,a=1,rem;
+        m=n;
+        while(n!=0)
+        {
+                rem=n%2;
+                no=no+rem*a;
+                n=n/2;
+                a=a*10;
+        }
+        printf("%d",no);
+}
+20. Program to convert binary to decimal
+main()
+{
+        int n;
+        printf("Enter data in binary format :");
+        scanf("%d",&n);
+        binary_decimal(n);
+
+}
+int binary_decimal(int n)
+{
+        int j=1,rem,n1=0;
+        while(n!=0)
+        {
+                rem=n%10;
+                n1=n1+rem*j;
+                j=j*2;
+                n=n/10;
+        }
+        printf("%d",n1);
+}   
+
+21. Program to check the number is perfect number or not.
+main()
+{
+        int n,x;
+        printf("Enter a number:");
+        scanf("%d",&n);
+        x=check_perfect(n);
+        if(x==n)
+                printf("Perfect number :");
+        else
+                printf("Not a perfect number :");
+
+}
+int check_perfect(int  n)
+{
+        int s=0,i=1;
+        while(i<n)
+        {
+                if(n%i==0)
+                        s=s+i;
+                i++;
+        }
+        return s;
+}
+22.Program to find generic root of a number.
+main()
+{
+        int n,k;
+        printf("Enter a number");
+        scanf("%d",&n);
+        k=generic(n);
+        printf("%d",k);
+}
+int generic(int n)
+{
+        int sum,r;
+        if(n<10)
+                return n;
+        while(n>10)
+        {
+                sum=0;
+                while(n!=0)
+                {
+                        r=n%10;
+                        n=n/10;
+                        sum+=r;
+                }
+                if(sum>10)
+                        n=sum;
+                else
+                        break;
+        }
+        return sum;
+}
+
+
+
+23. Program to check a year is leap year or not.
+main()
+{
+        int year;
+        printf("Enter the year :\n");
+        scanf("%d",&year);
+
+        if((year % 400==0 )|| ((year % 4==0)&& (year %100!=0)))
+                printf("Leap Year ");
+        else
+              printf("Not leap year");
+}
+
+
+24. Program to revese a string
+main()
+{
+	char x[100];
+	printf("Enter a string :");
+	gets(x);
+	strrev(x);
+	printf("%s",x);
+}
+int strrev(char *x)
+{
+        int len=strlen(x);
+        int i;
+        char temp;
+        for(i=0;i<len/2;i++)
+        {
+                temp=x[i];
+                x[i]=x[len-i-1];
+                x[len-i-1]=temp;
+        }
+}
+25. Program to add a sub-string in a string
+main()
+{
+        char x[100],y[20];
+        int pos;
+        printf("Enter string :");
+        gets(x);
+        printf("Enter substring:");
+        scanf("%s",y);
+        printf("Enter position:");
+        scanf("%d",&pos);
+        add_substring(x,y,pos);
+}
+int add_substring(char *x,char *y,int pos)
+{
+        char z[100];
+        int i=0,j=0,k;
+        memset(z,0,sizeof(z));
+        while(i<pos)
+        {
+                z[i]=*x;
+                x++;
+                i++;
+        }
+        while(*y!=0)
+        {
+                z[i]=*y;
+                i++;
+                y++;
+        }
+        z[i]=' ';
+        i++;
+        while(*x!=0)
+        {
+                z[i]=*x;
+                i++;
+                x++;
+        }
+        z[i]=0;
+        printf("%s",z);
+}
+26. Program to traverse a string in reverse order
+	main()
+	{
+      		char x[100];
+      		printf("Enter a string :");
+       		gets(x);
+       	 	int len=strlen(x)-1;
+        	while(len>=0)
+        	{
+              		printf("%c",x[len]);
+               		len--;
+        	}
+	}
+27. Program to count number of words,vowels,digits and space present in string.
+main()
+{
+        int word=0,space=0,digit=0,vowels=0,i;
+        char x[100];
+        printf("Enter a string :");
+        gets(x);
+
+        for(i=0;i<strlen(x);i++)
+        {
+                if(x[i]=='a' || x[i]=='A' || x[i]=='e' || x[i]=='E' || x[i]=='i' || x[i]=='I'
+                                 || x[i]=='o' || x[i]=='O' || x[i]=='u' || x[i]=='U')
+                vowels++;
+                if(x[i]>=48 && x[i]<=57)
+                        digit++;
+                if(x[i]==32) //space
+                        space++;
+
+        }
+        word=space+1;
+        printf("%d %d %d %d\n",word,space,digit,vowels);
+
+}
+
+
+
+28. Program to add between two matrix
+main()
+{
+        int a[3][3]={
+                        1,2,1,
+                        1,2,2,
+                        3,2,1
+                        };
+        int b[3][3]={
+                        2,2,1,
+                        1,1,1,
+                        2,3,1
+                };
+        int c[3][3];
+        int i,j,k,sum=0;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        c[i][j]=a[i][j]*b[i][j];
+                }
+        }
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        printf("%d ",c[i][j]);
+                }
+                printf("\n");
+        }
+}
+
+29. Program for multiplication between two matrix
+main()
+{
+        int a[3][3]={
+                        1,2,1,
+                        1,2,2,
+                        3,2,1
+                        };
+        int b[3][3]={
+                        2,2,1,
+                        1,1,1,
+                        2,3,1
+                };
+        int c[3][3];
+        int i,j,k,sum=0;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        c[i][j]=0;
+                        for(k=0;k<3;k++)
+                        {
+                                c[i][j]=c[i][j]+a[i][k]*b[k][j];
+                        }
+                }
+        }
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        printf("%d ",c[i][j]);
+                }
+                printf("\n");
+        }
+}
+30. Program to transpose a matrix
+main()
+{
+        int a[3][5]={
+                        1,4,5,6,7,
+                        2,3,4,1,5,
+                        9,5,3,1,4
+                        };
+        int b[5][3];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<5;j++)
+                {
+                        b[j][i]=a[i][j];
+                }
+        }
+
+        for(i=0;i<5;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        printf("%d",b[i][j]);
+                }
+                printf("\n");
+        }
+
+}
+32. Program to calculate Amicable pairs from 1 to 1000
+
+#include "stdio.h"
+main()
+{
+        int n,k;
+        int i=1,s1=0,s2=0;
+        for(k=1;k<=1000;k++)
+        {
+                n=k;
+                while(i<n)
+                {
+                        if(n%i==0)
+                                s1=s1+i;
+                        i++;
+                }
+                i=1;
+                if(s1==n)
+                   continue;
+                while(i<s1)
+                {
+                        if(s1%i==0)
+                                s2=s2+i;
+                        i++;
+                }
+                if(n==s2)
+                        printf("%d \n",n);
+
+                s1=0;
+                s2=0;
+        }
+}
+
+33. Program to calculate Sum of the series 1+2+3+---------+n 
+main() 
+{ 
+	int r; 
+	printf("Enter the number range: "); 
+	scanf("%d",&r); 
+	printf("%d",(r*(r+1))/2); 
+} 
+
+34. Program to find area triangle
+
+#include "math.h"
+int main()
+{
+    double a,b,c,s;
+    double area;
+
+    printf("Enter the size of triangle :");
+    scanf("%lf%lf%lf",&a,&b,&c);
+
+    s = (a + b + c)/2;
+    area =sqrt (s*(s-a)*(s-b)*(s-c));
+
+    printf("%lf",area);
+}
+
+35. Program  for Bubble sort 
+main()
+{
+        int a[5]={4,9,40,2,25};
+        int i;
+        bubble_sort(a);
+        for(i=0;i<5;i++)
+                printf("%d ",a[i]);
+}
+
+int bubble_sort(int a[5])
+{
+        int i,j,temp;
+        for(i=0;i<5;i++)
+        {
+                for(j=0;j<5-i;j++)
+                {
+                        if(a[j]>a[j+1])
+                        {
+                                temp=a[j];
+                                a[j]=a[j+1];
+                                a[j+1]=temp;
+                        }
+                }
+        }
+}
+36. Program  for Selection sort 
+main()
+{
+        int a[5]={4,9,40,2,25};
+        int i;
+        selection_sort(a);
+        for(i=0;i<5;i++)
+                printf("%d ",a[i]);
+}
+int selection_sort(int a[5])
+{
+        int i,j,temp;
+        for(i=0;i<5;i++)
+        {
+                for(j=i+1;j<5;j++)
+                {
+                        if(a[i]>a[j])
+                        {
+                                temp=a[i];
+                                a[i]=a[j];
+                                a[j]=temp;
+                        }
+                }
+        }
+}
+37. Program  for Insertion sort
+
+main()
+{
+        int a[5]={4,9,40,2,25};
+        int i;
+        insert_sort(a);
+        for(i=0;i<5;i++)
+                printf("%d ",a[i]);
+}
+int insert_sort(int a[5])
+{
+        int i,j,k,temp;
+        for(i=1;i<5;i++)
+        {
+                for(j=0;j<i;j++)
+                {
+                        if(a[i]<a[j])
+                        {
+                                temp=a[i];
+                                for(k=i;k>j;k--)
+                                {
+                                        a[k]=a[k-1];
+
+                                }
+                                a[j]=temp;
+                        }
+                }
+        }
+}
+38. Program  for quick sort
+
+main()
+{
+        int x[5]={5,9,2,20,6};
+        int i;
+        quick_sort(x,0,4);
+        for(i=0;i<5;i++)
+                printf("%d ",x[i]);
+}
+quick_sort(int x[10],int first,int last)
+{
+        int pivot,j,temp,i;
+        if(first<last)
+        {
+                pivot=first;
+                i=first;
+                j=last;
+                while(i<j)
+                {
+                         while(x[i]<=x[pivot]&&i<last)
+                                i++;
+                        while(x[j]>x[pivot])
+                                j--;
+                        if(i<j)
+                        {
+                                temp=x[i];
+                                x[i]=x[j];
+                                x[j]=temp;
+                        }
+                }
+                temp=x[pivot];
+                x[pivot]=x[j];
+                x[j]=temp;
+                quick_sort(x,first,j-1);
+                quick_sort(x,j+1,last);
+    }
+}
+
+
+42. Binary Search using an Array
+
+void main()
+{
+  	int a[10],i,n,m,c=0,l,u,mid;
+  	printf("Enter the size of an array->");
+  	scanf("%d",&n);
+  	printf("\nEnter the elements of the array->");
+  	for(i=0;i<n;i++)
+  	{
+		scanf("%d",&a[i]);
+  	}
+  	printf("\nThe elements of an array are->");
+  	for(i=0;i<n;i++)
+  	{
+		printf(" %d",a[i]);
+  	}
+  	printf("\nEnter the number to be search->");
+  	scanf("%d",&m);
+  	l=0,u=n-1;
+  	while(l<=u)
+  	{
+		mid=(l+u)/2;
+		if(m==a[mid])
+		{
+			c=1;
+			break;
+		}
+		else
+		if(m<a[mid])
+		{
+			u=mid-1;
+		}
+		else
+			l=mid+1;
+  	}
+  	if(c==0)
+		printf("\nThe number is not in the list");
+  	else
+		printf("\nThe number is found");
+ }
+52. Calculate the age of a person after giving the date of the birth.
+
+#include "time.h"
+main()
+{
+	char x[100],y[100];
+	int dd,mm,yy;
+	int bd,bm,by;
+	int nd,nm,ny;
+	unsigned int t;
+	struct tm *mytime;
+	t=time(0);
+	mytime=localtime(&t);
+
+	dd=mytime->tm_mday;
+	mm=mytime->tm_mon+1;
+	yy=mytime->tm_year+1900;
+	
+	printf("Enter birtd day,mon and year :");
+	scanf("%d%d%d",&bd,&bm,&by);
+
+	if(dd>=bd)
+		nd=dd-bd;
+	else
+	if(mm==1 || mm==3 || mm==5 || mm==7 || mm==8 || mm==10 || mm==12)
+	{
+		dd=dd+31;
+		nd=dd-bd;
+	}
+	else
+	if(mm==4 || mm==6 || mm==9 || mm==11)
+	{
+		dd=dd+30;
+		nd=dd-bd;
+	}	
+	else
+	if(mm==2)
+	{
+		dd=dd+28;
+		nd=dd-bd;
+	}
+	if(mm>=bm)
+	{
+		nm=mm-bm;
+	}
+	else
+	{
+		mm=mm+12;
+		yy=yy-1;
+		nm=mm-bm;
+	}
+	ny=yy-by;
+	printf("%d %d %d \n",ny,nm,nd);
+}
+53. Cacluate the average marks of student looking at the following table
+	
+	p1 	p2	p3 	average 	Result
+				>=60%		first
+				>=50		second
+				>=40		third
+
+		avg=(p1+p2+p3)/3;
+		where p1,p2 and p3 >=30
+
+main()
+{
+	int p1,p2,p3,avg;
+	
+	printf("Enter Marks for p1 p2 & p3 : ");
+	scanf("%d%d%d",&p1,&p2,&p3);
+	
+	avg=(p1+p2+p3)/3;
+
+	if(p1>=30 && p2>=30 && p3>=30)
+	{
+		if(avg>=60)
+			printf("First\n");
+		else
+		 if(avg>=50)
+			printf("Second\n");
+		 else
+		 if(avg>=40)
+			printf("Third\n");
+		 else
+			printf("Failed\n");
+
+	}
+	else
+		printf("Failed\n");
+}
+
+54. Cacluate the amount to be paid after giving the total time.
+
+Time	Amount
+
+8 hours		100/-
+Next 4 hours	20/- ph
+Next 4 hours	30/- ph
+Next 4 hours	40/- ph
+
+main()
+{
+	int time,amt;
+	printf("Enter Total Time :");
+	scanf("%d",&time);
+	if(time==8)
+		amt=100;
+	else
+	if(time>8 && time<=12)
+		amt=100+(time-8)*20;
+	else
+	if(time>12 && time<=16)
+		amt=180+(time-12)*30;
+	else
+	if(time>16 && time<=20)
+		amt=300+(time-16)*40;
+	else
+	{
+		printf("Invalid entry\n");
+		exit(0);
+	}
+
+	printf("%d", amt);
+}
+55. Program to convert upper case to lower case
+
+void main()
+{
+  	char str[20];
+  	int i;
+  	printf("Enter any string->");
+  	scanf("%s",str);
+  	printf("The string is->%s",str);
+  	for(i=0;i<=strlen(str);i++)
+  	{
+		if(str[i]>=65&&str[i]<=90)
+		str[i]=str[i]+32;
+  	}
+ 	printf("\nThe string in uppercase is->%s",str);
+  }
+56. Program to calculate the power of a number
+void main()
+{
+ int pow,num,i=1;
+ long int sum=1;
+ printf("\nEnter a number: ");
+ scanf("%d",&num);
+ printf("\nEnter power: ");
+ scanf("%d",&pow);
+ while(i<=pow)
+ {
+    sum=sum*num;
+     i++;
+ }
+   printf("\n%d to the power %d is: %ld",num,pow,sum);
+
+57. INSERT AN ELMENT IN AN ARRAY AT DESIRED POSITION
+
+void main()
+{
+  int a[50],size,num,i,pos,temp;
+  printf("\nEnter size of the array: ");
+  scanf("%d",&size);
+  printf("\nEnter %d elements in to the array: ",size);
+  for(i=0;i<size;i++)
+    scanf("%d",&a[i]);
+  printf("\nEnter position and number to insert: ");
+    scanf("%d %d",&pos,&num);
+   i=0;
+   while(i!=pos-1)
+     i++;
+   temp=size++;
+   while(i<temp)
+   {
+      a[temp]=a[temp-1];
+      temp--;
+   }
+   a[i]=num;
+   for(i=0;i<size;i++)
+     printf(" %d",a[i]);
+  }
+}
+
+58. program to calculate the sum of the following series
+1 - x + x2/2! + x3/3! --------to nth term
+
+main()
+{
+	int serise,square,fact=1,loop=1,loop1;
+	float sum;
+	float result=0;
+	printf("Enter The serise ");
+	scanf("%d",&serise);
+	while(loop<=serise)
+	{
+		square=pow(loop,2);
+		for(loop1=1;loop1<=loop;loop1++)
+		{
+			fact = fact * loop1;
+		}
+		sum=(float)square/fact;
+		if(loop%2!=0)
+			result = result + sum;
+		else
+			result = result - sum;
+		fact=1;
+		loop++;
+	}
+	printf("The summation Of the serise is %f\n",result);
+}
+
+59. Find the weekday of a particular date(ex-6 sep 2010 (monday)
+
+#include "time.h"
+#include "stdio.h"
+main()
+{
+	char daybuf[20];
+	int dd,mm,yy;
+	unsigned int t;
+	struct tm *mytime;
+	t=time(0);
+	mytime=localtime(&t);
+
+	dd=mytime->tm_mday;
+	mm=mytime->tm_mon+1;
+	yy=mytime->tm_year+1900;
+	mytime->tm_hour = 0;
+	mytime->tm_min = 0;
+	mytime->tm_sec = 1;
+	mytime->tm_isdst = -1;
+	
+	printf("Enter the day,mon and year :");
+	scanf("%d%d%d",&dd,&mm,&yy);
+
+	if(mktime(mytime) == -1)
+  		fprintf(stderr, "Unkown -\n");
+ 	else
+  		strftime(daybuf, sizeof(daybuf), "%A", mytime);
+
+	printf("It was a %s\n", daybuf);
+}
+60.Write a program to convert given ip address 192.168.3.35 into 192.168.003.035
+
+
+#include<stdio.h>
+int main()
+{
+	char input[16];
+	char p[4][4];
+	int i,a,b,len;
+	int j,c;
+	printf("pl enter any ip address\n");
+	scanf("%s",input);
+	a=0;b=0;
+	for(i=0;input[i];i++)
+	{
+		if(input[i]!='.')
+			p[a][b++]=input[i];
+		else
+		{
+			p[a][b]=0;
+			a++;
+			b=0;
+		}
+	}
+	p[a][b]=0;
+
+	for(a=0;a<4;a++)
+	{
+		len=strlen(p[a]);
+		for(j=len-1;j>=0;j--)
+			p[a][j+3-len]=p[a][j];
+		for(j=0;j<(3-len);p[a][j]='0',j++);
+		p[a][3]=0;
+	}
+	input[0]=0;
+	for(i=0;i<4;i++)
+	{
+		strcat(input,p[i]);
+		strcat(input,".");
+	}
+	input[15]=0;
+	puts(input);
+	return 0;
+}
+61.Caclulate the net salary looking at the following table
+
+	Basic	TA	DA	PF	NET
+	>=20000	500	200	200	?
+	>=10000	200	300	100	?
+	>=500	100	100	100	?
+
+main()
+{
+	int basic,ta,da,pf,net;
+	printf("Enter basic Salary :");
+	scanf("%d",&basic);
+	if(basic>=20000)
+	{
+		ta=500;
+		da=200;
+		pf=200;
+	}
+	else
+	if(basic>=10000)
+	{
+		ta=200;
+		da=300;
+		pf=100;
+	}
+	else
+	if(basic>=5000)
+	{
+		ta=100;
+		da=100;
+		pf=100;
+	}
+	else
+	{
+		printf("Invalid entry");
+		exit(0);
+	}
+	net=(basic+ta+da)-pf;
+	printf("%d", net);
+}
+
+62.    Write a  program to display :
+ 	         * 
+                *** 
+               ***** 
+              ******* 
+             ********* 
+	      ******
+	       ***
+main() 
+{ 
+        int line,star=1,space,i,j,k; 
+        printf("Enter the no of line :\n"); 
+        scanf("%d",&line); 
+        printf("Enter the no of space\n"); 
+        scanf("%d",&space); 
+        for(i=0;i<line;i++) 
+        { 
+                for(j=0;j<space;j++) 
+                { 
+                        printf(" "); 
+                } 
+                for(k=0;k<star;k++) 
+                { 
+                        printf("*"); 
+                } 
+                if(i<line/2) 
+                { 
+                        space=space-1; 
+                        star=star+2; 
+                } 
+                else 
+                { 
+                        star=star-2; 
+                        space=space+1; 
+                } 
+                printf("\n"); 
+        } 
+} 
+63. Write a program which will store roll name and age in student structure and address telephone no. In address structure. Implement the nested structure which will store information of ten students and their address and organize data in descending order by their roll no.
+#include "stdio.h"
+#include "stdlib.h"
+#include "fcntl.h"
+#define SIZE 3
+struct address
+{
+	char addr[30];
+	long int phoneno;
+};
+struct student
+{
+	char name[20];
+	int roll;
+	int age;
+	struct address p;
+}__attribute__((__packed__));
+
+main()
+{
+	struct student details[SIZE],temp;
+	int loop,outer,inner;
+
+	for(loop = 0;loop<SIZE;loop++)
+	{
+		printf("Enter name :");
+		scanf("%s",details[loop].name);
+		printf("Enter roll :");
+		scanf("%d",&details[loop].roll);
+		printf("Entere Age: ");
+		scanf("%d",&details[loop].age);
+		printf("Enter address:	");
+		scanf("%s",details[loop].p.addr);
+		printf("Enter Phone number:");
+		scanf("%d",&details[loop].p.phoneno);
+	}
+	printf("Before Sorting\n");
+	for(loop = 0;loop < SIZE;loop++)
+	{
+		printf("%s\t%d\t%d\t%s\t%d\n",details[loop].name,details[loop].roll,details[loop].age,details[loop].p.addr,details[loop].p.phoneno);
+	}
+	printf("\n");
+	for(outer = 0;outer < SIZE;outer++)
+	{
+		for(inner = outer + 1;inner < SIZE;inner++)
+		{
+			if(details[outer].roll > details[inner].roll)
+			{
+				temp = details[outer];
+				details[outer] = details[inner];
+				details[inner] = temp;
+			}
+		}
+	}
+	printf("After Sorting\n");
+	for(loop = 0;loop < SIZE;loop++)
+	{
+		printf("%s\t%d\t%d\t%s\t%d\n",details[loop].name,details[loop].roll,details[loop].age,details[loop].p.addr,details[loop].p.phoneno);
+	}
+	printf("\n");
+}
+
+
+64. Write a program to store the information of student such as roll, name and course to a file using read & write system call.
+
+#include "fcntl.h"
+#include "stdio.h"
+struct student
+{
+	char name[30];
+	int roll;
+	int age;
+}__attribute__((__packed__));
+
+main()
+{
+	int handlerStructure, numberOfStudent, loop;
+
+	handlerStructure = open("studentDetails.txt",O_RDWR);
+
+	printf("HOW MANY STUDENT'S INFORMATION	:");
+	scanf("%d",&numberOfStudent);
+	struct student details[numberOfStudent];
+
+	for(loop = 0;loop < numberOfStudent;loop++)
+	{
+		write(1,"ENTER NAME OF STUDENT	:",strlen("ENTER NAME OF STUDENT	:"));
+		memset(details[loop].name,0,sizeof(details[loop].name));
+		read(0,details[loop].name,sizeof(details[loop].name));
+
+		write(1,"ENTER THE ROLL NO.	:",strlen("ENTER THE ROLL NO.	:"));
+		read(0,&details[loop].roll,sizeof(details[loop].roll));
+
+		write(1,"ENTER THE STUDENT'S AGE	:",strlen("ENTER THE STUDENT'S AGE	:"));
+		read(0,&details[loop].age,sizeof(details[loop].age));
+	}
+
+	//write(handlerStructure,&details,sizeof(struct student));
+	
+	for(loop = 0;loop < numberOfStudent;loop++)
+	{
+		write(handlerStructure,&details[loop].name,strlen(details[loop].name));
+		write(handlerStructure,&details[loop].roll,sizeof(details[loop].roll));
+		write(handlerStructure,&details[loop].age,sizeof(details[loop].age));
+	}
+	loop = 0;
+	while(read(handlerStructure,&details[loop],sizeof(struct student)))
+	{
+		write(1,&details[loop].name,strlen(details[loop].name));
+		write(1,&details[loop].roll,sizeof(details[loop].roll));
+		write(1,&details[loop].age,sizeof(details[loop].age));
+		loop++;
+	}
+}
+65. Write a program to count no. of paragraphs, lines, words and characters present in a file.
+
+
+

@@ -1,0 +1,28 @@
+i>>	THS SIZE OF VOID POINTER IS 4 AND THE SIZE OF VOID IS 1.!!
+
+2>>	DOING ANY OPERATION ON GARBAGE POINTER COUSE RUNTIME ERROR!!
+
+3>>	In pointer, address operator and Multiplication operator are always cancel each other. Thus *&*ptr = *ptr.
+
+4>>	Difference between any two variables of same data type are always one.
+
+5>> What is the difference between const char *p, char * const p and const char * const p?
+
+	const char *p - This is a pointer to a constant character. You cannot change the value pointed by p, but you can change the pointer p itself.
+	*p = 'S' is illegal.
+	 p = "Test" is legal.
+
+	Note - char const *p is the same.
+
+
+	const * char p - This is a constant pointer to non-constant character. You cannot change the pointer p, but can change the value pointed by p.
+	*p = 'A' is legal.
+	 p = "Hello" is illegal.
+
+
+	 const char * const p - This is a constant pointer to constant character. You cannot change the value pointed by p nor the pointer p.
+	
+	 *p = 'A' is illegal.
+	  p = "Hello" is also illegal.
+
+6>>	

@@ -1,0 +1,27 @@
+#include"stdio.h"
+int Z[100];
+int* extra(int X[], int xl, int Y[], int yl){
+        int zl=1, i=0, j;
+outer:  if(i<yl){
+                for(j=0; j<xl; ++j){
+                        if(Y[i]==X[j]){
+                                i++;
+                                goto outer;
+                        }
+                }
+                Z[zl++]=Y[i++];
+                goto outer;
+        }
+        Z[0]=zl;
+        return Z;
+}
+int main(){
+        int Y[]={2, 8, 9, 13, 5, 7, 10, 15};
+        int X[]={5, 3, 10};
+        int *Z;
+        Z=extra(X, 3, Y, 8);
+        int i;
+        for(i=1; i<Z[0]; ++i)
+                printf("%d ", Z[i]);
+        return 0;
+}

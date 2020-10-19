@@ -1,0 +1,38 @@
+#include<stdio.h>
+void main()
+{
+int i,j,x,k=1;
+for(i=0;i<7;i++)
+        {
+        if(i%2==0)
+        {
+                for(j=0;j<=i;j++)
+                {
+                printf("%d",k);
+                k=k+1;
+                if(j<i)
+                {
+                printf("*");
+                }
+                }
+                printf("\n");
+                k=k+i+1;
+        }
+        else
+        {
+        for(j=0;j<=i;j++)
+        {
+        printf("%d",k);
+        if(j<i)
+        {
+        printf("*");
+        }
+        k--;
+        }
+        printf("\n");
+        k=k+i+2;
+}
+}
+
+
+}

@@ -1,0 +1,50 @@
+#include"stdio.h"
+#include"string.h"
+int length(char a[]){
+        int len=0;
+        while(a[len++]!='\0');
+        return len-1;
+}
+void sort(char A[10][10], int size){
+        char temp[10];
+        int i=0, j=0;
+        for(i=0; i<size; i++)
+                for(j=0; j<size-1; j++)
+                        if(strcmp(A[j], A[j+1])>0){
+                                strcpy(temp, A[j]);
+                                strcpy(A[j], A[j+1]);
+                                strcpy(A[j+1], temp);
+                        }
+}
+int main(){
+        char three[10][10], four[10][10], five[10][10], read[10], next[10];
+        int l3=0, l4=0, l5=0, i=0, end;
+        FILE *fp;
+        fp=fopen("file.dat", "r");
+        printf("---- Unsorted ----\n");
+        do{
+                end=fscanf(fp, "%s", read);
+                if(end==EOF)
+                        break;
+                printf("%s\n", read);
+                if(length(read)==3)
+                        strcpy(three[l3++], read);
+                if(length(read)==4)
+                        strcpy(four[l4++], read);
+                if(length(read)==5)
+                        strcpy(five[l5++], read);
+        }while(1);
+        sort(three, l3);
+        sort(four, l4);
+        sort(five, l5);
+        printf("\n---- Sorted ----\n");
+        for(i=0; i<l3; i++)
+                printf("%s\n", three[i]);
+        printf("\n");
+        for(i=0; i<l4; i++)
+                printf("%s\n", four[i]);
+        printf("\n");
+        for(i=0; i<l5; i++)
+                printf("%s\n", five[i]);
+        return 0;
+}
